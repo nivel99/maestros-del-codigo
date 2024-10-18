@@ -1,0 +1,111 @@
+Concepto de Factory Method
+El Patrón Factory es un patrón de diseño que proporciona una forma de crear objetos sin especificar la clase exacta del objeto que se va a crear. En lugar de instanciar objetos directamente usando el operador new, usamos un Factory Method para crear el objeto adecuado según las necesidades. Esto tiene varias ventajas:
+
+Desacoplamiento: El código que usa los objetos no necesita saber qué clase exacta se está creando. Esto hace que el código sea más flexible y fácil de mantener, ya que si en el futuro se necesita cambiar la implementación de una clase o agregar nuevas, no es necesario modificar el código principal.
+Simplificación: Ayuda a encapsular la lógica de creación en un solo lugar, en lugar de tener múltiples instancias de new dispersas por el código.
+Facilidad para agregar nuevas clases: Si se necesita agregar un nuevo tipo de objeto, solo se debe ajustar el Factory para incluir la nueva clase, sin tener que cambiar el resto del código.
+
+Ejemplo del Código
+Vamos a revisar el código que hemos implementado para que entiendas cómo funciona el patrón Factory.
+
+Estructura del Código
+Clases de Productos:
+
+Car.php: Define una clase Car que implementa la interfaz Vehicle.
+Bike.php: Define una clase Bike que también implementa la interfaz Vehicle.
+Ambas clases tienen un método drive que muestra cómo funcionan.
+Interfaz Vehicle:
+
+Define la estructura que todas las clases de vehículos (Car, Bike, etc.) deben seguir.
+De esta forma, garantizamos que todos los vehículos puedan ser usados de la misma forma (tienen el método drive).
+Factory (VehicleFactory.php):
+
+La clase VehicleFactory contiene el método create, que acepta un parámetro type para determinar qué tipo de vehículo se debe crear.
+El método create devuelve una instancia de Car o Bike según el tipo proporcionado. Si el tipo no es soportado, se lanza una excepción.
+
+Código Explicado
+
+Interfaz Vehicle (Vehicle.php):
+
+<?php
+interface Vehicle {
+    public function drive();
+}
+?>
+
+Esta interfaz asegura que cualquier clase que la implemente tenga un método drive.
+
+Clase Car (Car.php):
+
+<?php
+require_once 'Vehicle.php';
+
+class Car implements Vehicle {
+    public function drive() {
+        echo "Conduciendo un coche\n";
+    }
+}
+?>
+
+Define un coche que se puede conducir. Implementa la interfaz Vehicle.
+
+Clase Bike (Bike.php):
+
+<?php
+require_once 'Vehicle.php';
+
+class Bike implements Vehicle {
+    public function drive() {
+        echo "Montando una bicicleta\n";
+    }
+}
+?>
+
+Define una bicicleta que se puede montar. También implementa Vehicle.
+
+Factory (VehicleFactory.php):
+
+<?php
+require_once __DIR__ . '/Car.php';
+require_once __DIR__ . '/Bike.php';
+
+class VehicleFactory {
+    public static function create($type) {
+        switch ($type) {
+            case 'car':
+                return new Car();
+            case 'bike':
+                return new Bike();
+            default:
+                throw new Exception("Tipo de vehículo no soportado");
+        }
+    }
+}
+?>
+
+Aquí es donde se toma la decisión de qué objeto crear. Basado en el parámetro type, se devuelve un Car o Bike. Si el type no es válido, se lanza una excepción.
+
+Uso de la Factory (ejemplo1.php):
+
+<?php
+require_once 'VehicleFactory.php';
+
+try {
+    $vehicle = VehicleFactory::create('car');
+    $vehicle->drive(); // Salida: "Conduciendo un coche"
+
+    $vehicle = VehicleFactory::create('bike');
+    $vehicle->drive(); // Salida: "Montando una bicicleta"
+
+    $vehicle = VehicleFactory::create('plane'); // Lanzará una excepción
+} catch (Exception $e) {
+    echo $e->getMessage(); // Salida: "Tipo de vehículo no soportado"
+}
+?>
+
+Aquí es donde usamos el Factory Method. Se llama al método create con diferentes tipos, y dependiendo del tipo, se obtiene una instancia de Car o Bike.
+
+Beneficios del Patrón Factory
+Fácil de mantener: Si necesitas agregar nuevos tipos de vehículos (por ejemplo, Bus), solo tienes que crear una nueva clase Bus y ajustar la lógica en VehicleFactory.
+Centraliza la creación de objetos: El código que necesita usar vehículos no necesita saber cómo se crean o qué tipo de clase específica se usa; solo solicita un vehículo a la fábrica.
+Este patrón es común en sistemas donde se necesita crear diferentes tipos de objetos que comparten algunas características (en este caso, todos son vehículos que pueden ser "conducidos"), pero la implementación específica de esos objetos puede variar.
