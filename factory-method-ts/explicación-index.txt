@@ -1,0 +1,5 @@
+Explicación de los Beneficios en TypeScript
+Tipificación estricta: TypeScript nos asegura que cualquier vehículo creado tendrá el método drive, lo que ayuda a evitar errores durante el desarrollo.
+Desacoplamiento: Como en PHP, el uso de una fábrica centralizada hace que el código sea más fácil de mantener y extender.
+Simplicidad en la creación: El cliente solo necesita saber el tipo de objeto que quiere, sin preocuparse por los detalles de la creación.
+El patrón Factory en TypeScript sigue los mismos principios que en otros lenguajes, pero aprovecha las ventajas de la tipificación y el desarrollo más seguro que ofrece TypeScript.
