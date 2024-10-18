@@ -1,0 +1,20 @@
+Explicación:
+Interfaz ICalculadora: Define el contrato que debe cumplir cualquier calculadora, especificando los métodos disponibles.
+Clases CalculadoraBasica: Implementan la interfaz ICalculadora, proporcionando la lógica concreta para cada tipo de calculadora.
+Clase OperacionesMatematicas:
+Tiene una propiedad privada $calculadora de tipo ICalculadora.
+Utiliza el constructor para inyectar una instancia de ICalculadora como dependencia.
+Los métodos de OperacionesMatematicas delegan las operaciones matemáticas a la instancia de ICalculadora inyectada.
+Uso:
+Se crea una instancia de CalculadoraBasica.
+Se crea una instancia de OperacionesMatematicas, inyectando la instancia de CalculadoraBasica.
+Se utiliza el método realizarSuma() de OperacionesMatematicas, que a su vez utiliza la instancia de CalculadoraBasica para realizar la suma.
+Ventajas de la inyección de dependencias:
+
+Flexibilidad: Puedes cambiar fácilmente el tipo de calculadora utilizada sin modificar el código de OperacionesMatematicas.
+Reutilización: La clase OperacionesMatematicas se puede reutilizar con diferentes implementaciones de ICalculadora.
+Testabilidad: Es más fácil escribir pruebas unitarias para OperacionesMatematicas al poder inyectar diferentes tipos de calculadoras para probar diferentes escenarios.
+Mantenibilidad: El código se vuelve más organizado y fácil de entender.
+En resumen:
+
+La inyección de dependencias es una técnica que consiste en pasar las dependencias de una clase como argumentos al constructor o a métodos setter. Esto permite desacoplar las clases y hacer el código más flexible, reutilizable y testable.

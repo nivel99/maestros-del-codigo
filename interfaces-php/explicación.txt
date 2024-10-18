@@ -1,0 +1,8 @@
+¿Qué es una interfaz?
+Imagina una interfaz como un contrato. Define un conjunto de métodos que una clase debe implementar obligatoriamente. Es decir, establece una especie de "plantilla" que las clases deben seguir.
+
+¿Para qué sirven las interfaces?
+Abstracción: Permiten separar la interfaz (lo que hace un objeto) de la implementación (cómo lo hace).
+Polimorfismo: Diferentes clases pueden implementar una misma interfaz de manera diferente, ofreciendo así múltiples formas de realizar una misma tarea.
+Acoplamiento: Reducen el acoplamiento entre clases, haciendo el código más modular y reutilizable.
+Tipado: Proporcionan un mecanismo de tipado fuerte, lo que ayuda a prevenir errores en tiempo de ejecución.

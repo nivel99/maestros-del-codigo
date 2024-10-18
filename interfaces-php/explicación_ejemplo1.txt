@@ -1,0 +1,22 @@
+Explicación:
+Interfaz IAnimal: Define los comportamientos comunes de un animal.
+Clases Perro y Pajaro: Implementan la interfaz IAnimal, proporcionando su propia implementación de cada comportamiento.
+Función crearZoologico: Esta función toma un array de objetos que implementan la interfaz IAnimal y llama a los métodos de cada objeto para simular un zoológico.
+Uso: Creamos un array $zoo con diferentes animales y luego llamamos a la función crearZoologico para verlos en acción.
+
+¿Qué hace este código?
+Define una interfaz común para representar animales.
+Crea clases concretas para perro y pájaro que implementan esta interfaz.
+Crea una función que puede trabajar con cualquier animal que implemente la interfaz.
+Demuestra cómo utilizar la función para crear un "zoológico" simple.
+
+Ventajas de este enfoque:
+Flexibilidad: Puedes agregar fácilmente nuevos tipos de animales sin modificar el código existente.
+Reutilización: La función crearZoologico puede ser utilizada con cualquier tipo de animal que implemente la interfaz IAnimal.
+Mantenibilidad: El código se vuelve más organizado y fácil de entender.
+Polimorfismo: Podemos tratar a todos los animales como si fueran del mismo tipo (IAnimal).
+
+Ampliaciones posibles:
+Agregar más métodos: Puedes agregar métodos como dormir(), jugar(), etc.
+Crear una jerarquía de interfaces: Por ejemplo, puedes crear una interfaz IMamifero que extienda IAnimal y agregar métodos específicos para mamíferos.
+Utilizar traits: Puedes usar traits para compartir código común entre diferentes clases.

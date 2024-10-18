@@ -1,0 +1,24 @@
+Explicación:
+Espacio de nombres Geometry: Todos las clases y la interfaz están agrupadas bajo el espacio de nombres Geometry para evitar conflictos de nombres.
+
+Estructura:
+La interfaz Figura define los métodos comunes para cualquier figura geométrica.
+Las clases Triangulo y Cuadrado implementan la interfaz Figura y proporcionan sus propias implementaciones para calcular el perímetro y el área.
+El código principal crea instancias de las clases y llama a sus métodos.
+Cómo usar este código:
+
+Crear un nuevo archivo: Guarda este código en un archivo PHP, por ejemplo, figuras.php.
+Ejecutar el archivo: Utiliza tu servidor web local o la línea de comandos de PHP para ejecutar este archivo. Deberías ver los resultados de los cálculos de perímetro y área en la salida.
+Ventajas de este enfoque:
+
+Organización: El uso de espacios de nombres mejora la organización del código, especialmente en proyectos más grandes.
+Evita conflictos: Al agrupar todas las clases y la interfaz en un mismo espacio de nombres, se evitan conflictos de nombres.
+Reutilización: La interfaz Figura puede ser utilizada como base para crear otras figuras geométricas.
+Flexibilidad: Puedes agregar nuevas figuras geométricas sin modificar el código existente.
+Consideraciones adicionales:
+
+Otras figuras: Puedes agregar clases para calcular el perímetro y el área de otras figuras como círculos, rectángulos, etc.
+Herencia: Puedes crear una jerarquía de clases, por ejemplo, una clase base Figura2D y luego clases derivadas para figuras específicas.
+Validación de datos: Puedes agregar validación para asegurarte de que los valores de los lados sean positivos.
+Métodos estáticos: Puedes utilizar métodos estáticos para realizar cálculos generales relacionados con figuras geométricas.
+Con esta estructura, tienes una base sólida para crear un sistema de cálculo de figuras geométricas en PHP, utilizando interfaces y espacios de nombres para una mejor organización y reutilización del código.

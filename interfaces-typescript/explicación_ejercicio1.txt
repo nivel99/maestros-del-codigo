@@ -1,0 +1,78 @@
+Definición de la Interfaz IAnimal
+interface IAnimal {
+    comer(): void;
+    moverse(): void;
+    hacerSonido(): void;
+}
+
+Interfaz: IAnimal define un contrato que cualquier clase que lo implemente debe seguir. Especifica que las clases deben tener tres métodos: comer(), moverse(), y hacerSonido(). Cada uno de estos métodos no toma parámetros y no devuelve ningún valor (void).
+
+Implementación de la Clase Perro
+class Perro implements IAnimal {
+    comer(): void {
+        console.log("El perro está comiendo.");
+    }
+
+    moverse(): void {
+        console.log("El perro está corriendo.");
+    }
+
+    hacerSonido(): void {
+        console.log("Guau!");
+    }
+}
+
+Clase Perro: Implementa la interfaz IAnimal. Proporciona definiciones concretas para los métodos comer(), moverse(), y hacerSonido(), mostrando comportamientos específicos del perro cuando se invocan estos métodos.
+
+Implementación de la Clase Pajaro
+class Pajaro implements IAnimal {
+    comer(): void {
+        console.log("El pájaro está picoteando.");
+    }
+
+    moverse(): void {
+        console.log("El pájaro está volando.");
+    }
+
+    hacerSonido(): void {
+        console.log("Pio, pio!");
+    }
+}
+
+Clase Pajaro: Al igual que Perro, la clase Pajaro implementa la interfaz IAnimal. Define sus propias versiones de los métodos, reflejando cómo un pájaro come, se mueve y hace sonido.
+
+function crearZoologico(animales: IAnimal[]): void {
+    for (let animal of animales) {
+        animal.comer();
+        animal.moverse();
+        animal.hacerSonido();
+        console.log("\n");
+    }
+}
+
+Función: crearZoologico toma un array de objetos que implementan la interfaz IAnimal como argumento. Itera sobre cada animal en el array y llama a sus métodos comer(), moverse(), y hacerSonido(), mostrando el comportamiento de cada animal en la consola. Se añade un salto de línea al final de cada iteración para separar las salidas de cada animal.
+
+Creación del Array de Animales
+const zoo: IAnimal[] = [
+    new Perro(),
+    new Pajaro(),
+    new Perro(), // Podemos agregar más animales
+];
+
+Array de Animales: Se crea un array llamado zoo que contiene instancias de Perro y Pajaro. Esto permite que la función crearZoologico maneje diferentes tipos de animales de forma polimórfica, utilizando la misma interfaz IAnimal.
+
+Llamada a la Función crearZoologico
+crearZoologico(zoo);
+
+Ejecución: Se llama a la función crearZoologico, pasando el array zoo. Esto desencadena la ejecución de los métodos de cada animal, mostrando su comportamiento en la consola.
+Instrucciones para Ejecutar el Código
+Para compilar y ejecutar el código, sigue estos pasos:
+
+Compila el archivo TypeScript a JavaScript usando:
+
+npx tsc ejercicio1.ts
+Ejecuta el archivo JavaScript generado con:
+node ejercicio1.js
+
+Conclusión
+Este código demuestra cómo usar interfaces en TypeScript para crear un sistema extensible y flexible que puede manejar diferentes tipos de animales de manera uniforme. Gracias a la interfaz, se garantiza que cualquier nueva clase de animal que se añada en el futuro debe implementar los métodos comer(), moverse(), y hacerSonido(), lo que promueve un diseño más limpio y mantenible.

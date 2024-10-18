@@ -1,0 +1,51 @@
+Explicación General del Código
+Definición de la Clase Category
+
+class Category {
+    getAll(): string {
+        return 'Todas las categorías publicadas';
+    }
+}
+
+Clase Category: Esta clase tiene un método getAll que retorna un mensaje indicando que se muestran todas las categorías publicadas.
+
+Definición de la Clase Post
+
+class Post {
+    protected category: Category;
+
+    constructor(category: Category) {
+        this.category = category;
+    }
+
+    getAll(): string {
+        return 'Todos los posts publicados';
+    }
+
+    getCategoriesFromPost(): string {
+        return this.category.getAll();
+    }
+}
+
+Clase Post:
+Tiene un atributo protegido category que almacena una instancia de Category.
+El constructor recibe un objeto de la clase Category y lo asigna al atributo category.
+El método getAll devuelve un mensaje indicando que se muestran todos los posts publicados.
+El método getCategoriesFromPost utiliza el objeto category para obtener las categorías asociadas a los posts, llamando al método getAll de la clase Category.
+
+Código Principal
+
+const category = new Category();
+const post = new Post(category);
+
+console.log(post.getAll());
+console.log("<br>");
+console.log(category.getAll());
+console.log("<br>");
+console.log(post.getCategoriesFromPost());
+
+Se crean instancias de Category y Post, pasando la instancia de Category al constructor de Post.
+Se llaman a los métodos getAll de ambas clases y al método getCategoriesFromPost de la clase Post, imprimiendo los resultados en la consola.
+
+Conclusión
+Este código en TypeScript implementa la misma lógica que el código PHP original, utilizando clases y métodos para gestionar posts y categorías. El uso de clases facilita la organización del código y la reutilización de componentes, lo que mejora la mantenibilidad y la legibilidad.

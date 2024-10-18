@@ -1,0 +1,63 @@
+Explicación General del Código
+Definición de la Interfaz Figura
+interface Figura {
+    perimetro(): number;
+    area(): number;
+}
+
+Interfaz: Figura define un contrato que cualquier clase que lo implemente debe seguir. Esta interfaz establece que las clases deben tener dos métodos: perimetro() y area(), ambos de tipo number, lo que indica que deben devolver un valor numérico.
+
+Implementación de la Clase Triangulo
+
+class Triangulo implements Figura {
+    private lado: number;
+
+    constructor(lado: number) {
+        this.lado = lado;
+    }
+
+    perimetro(): number {
+        return this.lado * 3;
+    }
+
+    area(): number {
+        return (this.lado * this.lado * Math.sqrt(3)) / 4;
+    }
+}
+
+Clase Triangulo: Implementa la interfaz Figura. Define un constructor que recibe el lado del triángulo y lo almacena en una propiedad privada. Proporciona implementaciones para los métodos perimetro() y area(), calculando el perímetro como el triple del lado y el área utilizando la fórmula del área de un triángulo equilátero.
+
+Implementación de la Clase Cuadrado
+
+class Cuadrado implements Figura {
+    private lado: number;
+
+    constructor(lado: number) {
+        this.lado = lado;
+    }
+
+    perimetro(): number {
+        return this.lado * 4;
+    }
+
+    area(): number {
+        return this.lado * this.lado;
+    }
+}
+
+Clase Cuadrado: También implementa la interfaz Figura. Al igual que la clase Triangulo, define un constructor que recibe el lado del cuadrado. Implementa los métodos perimetro() y area(), calculando el perímetro como cuatro veces el lado y el área como el cuadrado del lado.
+Código Principal
+
+const triangulo = new Triangulo(3);
+const cuadrado = new Cuadrado(4);
+
+console.log("- Usamos las interfaces -");
+console.log(`Perímetro del cuadrado: ${cuadrado.perimetro()}`);
+console.log(`Perímetro del triángulo: ${triangulo.perimetro()}`);
+console.log(`Área del cuadrado: ${cuadrado.area()}`);
+console.log(`Área del triángulo: ${triangulo.area()}`);
+
+Instancias: Se crean instancias de Triangulo y Cuadrado, pasándoles los lados correspondientes. Luego, se imprimen los perímetros y áreas de ambas figuras utilizando los métodos definidos.
+
+Conclusión
+Este código en TypeScript es una adaptación del código PHP que demuestra cómo utilizar interfaces para definir un contrato para diferentes figuras geométricas. Al implementar la interfaz Figura, las clases Triangulo y Cuadrado proporcionan sus propias implementaciones para calcular el perímetro y el área. Esto promueve un diseño orientado a objetos más limpio y flexible, permitiendo la fácil extensión del código en el futuro al añadir más figuras geométricas.

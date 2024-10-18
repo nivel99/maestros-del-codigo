@@ -1,0 +1,43 @@
+En este ejercicio de PHP, estamos trabajando con la Programación Orientada a Objetos (POO), utilizando dos clases: Post y Category. La idea principal es entender cómo interactúan las clases entre sí y cómo podemos usar interfaces para crear una estructura más modular y reutilizable.
+
+Descripción del Ejercicio
+Archivos Importados
+
+En el archivo ejemplo2.php, incluimos dos archivos: Post.php y Category.php. Esto es necesario para poder usar las clases Post y Category en nuestro código principal.
+Esto se hace mediante el uso de require, que asegura que estos archivos se carguen antes de que podamos utilizar las clases que contienen.
+Creación de Objetos
+
+Creamos un objeto Post, al que le pasamos una instancia de Category como parámetro. Esto significa que cada objeto de Post tendrá acceso a un objeto Category.
+También creamos un objeto Category por separado.
+Métodos y Mensajes
+
+En la clase Post, tenemos dos métodos importantes:
+getAll(), que devuelve un mensaje indicando que se muestran todos los posts publicados.
+getCategoriesFromPost(), que utiliza el objeto Category para obtener las categorías asociadas a los posts.
+En la clase Category, el método getAll() devuelve un mensaje que indica que se muestran todas las categorías publicadas.
+Interacción entre Clases
+
+El constructor de la clase Post recibe un objeto de Category. Esto significa que la clase Post depende de la clase Category para poder usar sus métodos.
+Cuando llamamos a getCategoriesFromPost() en un objeto Post, realmente estamos llamando al método getAll() de Category. Esto demuestra cómo las clases pueden interactuar entre sí.
+Conceptos Clave que Aprendemos
+Programación Orientada a Objetos (POO)
+
+Clases: Plantillas para crear objetos con propiedades y métodos específicos.
+Objetos: Instancias de clases que representan entidades específicas.
+Constructor: Un método especial que se ejecuta cuando se crea un nuevo objeto, inicializando sus propiedades.
+Dependencias entre Clases
+
+La clase Post depende de Category, y esta relación se establece cuando pasamos un objeto Category al constructor de Post.
+Esto ayuda a modularizar el código y reutilizarlo, ya que podemos cambiar la implementación de Category sin tener que modificar Post.
+Reutilización de Código
+
+Separando las funcionalidades en diferentes clases, podemos reutilizar métodos y crear nuevos objetos sin tener que reescribir el código.
+
+Ejemplo de Ejecución
+Al ejecutar ejemplo2.php, obtendremos:
+
+Todos los post publicados
+Todas las categorías publicadas
+Todas las categorías publicadas
+
+Esto muestra cómo las clases y sus métodos trabajan juntas para devolver resultados, resaltando el poder de la POO para crear código organizado y fácil de mantener.

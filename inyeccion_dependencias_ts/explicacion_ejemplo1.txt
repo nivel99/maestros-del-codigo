@@ -1,0 +1,65 @@
+Explicación General del Código
+Definición de la Interfaz ICalculadora
+
+interface ICalculadora {
+    sumar(a: number, b: number): number;
+    restar(a: number, b: number): number;
+    multiplicar(a: number, b: number): number;
+    dividir(a: number, b: number): number;
+}
+
+Interfaz: ICalculadora define un contrato que cualquier clase que lo implemente debe seguir. Establece que las clases deben tener cuatro métodos: sumar, restar, multiplicar y dividir, todos con dos parámetros de tipo number y retornando un valor de tipo number.
+
+Implementación de la Clase CalculadoraBasica
+
+class CalculadoraBasica implements ICalculadora {
+    sumar(a: number, b: number): number {
+        return a + b;
+    }
+
+    restar(a: number, b: number): number {
+        return a - b;
+    }
+
+    multiplicar(a: number, b: number): number {
+        return a * b;
+    }
+
+    dividir(a: number, b: number): number {
+        if (b === 0) {
+            throw new Error("No se puede dividir por cero.");
+        }
+        return a / b;
+    }
+}
+
+Clase CalculadoraBasica: Implementa la interfaz ICalculadora. Cada método realiza la operación matemática correspondiente. En el caso del método dividir, lanza un error si se intenta dividir por cero.
+
+Clase OperacionesMatematicas
+
+class OperacionesMatematicas {
+    private calculadora: ICalculadora;
+
+    constructor(calculadora: ICalculadora) {
+        this.calculadora = calculadora;
+    }
+
+    realizarSuma(a: number, b: number): number {
+        return this.calculadora.sumar(a, b);
+    }
+
+    // ... otros métodos para realizar operaciones matemáticas
+}
+
+Clase OperacionesMatematicas: Contiene una propiedad privada calculadora de tipo ICalculadora, que es inyectada a través del constructor. La clase proporciona un método realizarSuma que utiliza la calculadora para realizar la suma.
+
+const calculadoraBasica = new CalculadoraBasica();
+const operacionesMatematicas = new OperacionesMatematicas(calculadoraBasica);
+
+const resultado = operacionesMatematicas.realizarSuma(5, 3);
+console.log(resultado); // Imprimirá 8
+
+Instancias: Se crean instancias de CalculadoraBasica y OperacionesMatematicas, pasando la calculadora básica al constructor de operaciones matemáticas. Finalmente, se llama al método realizarSuma y se imprime el resultado.
+
+Conclusión
+Este código en TypeScript es una adaptación del código PHP que demuestra cómo utilizar interfaces para implementar una calculadora básica. Al implementar la interfaz ICalculadora, la clase CalculadoraBasica proporciona implementaciones para realizar operaciones matemáticas. La clase OperacionesMatematicas utiliza inyección de dependencias para interactuar con la calculadora, lo que facilita la extensión y el mantenimiento del código.
