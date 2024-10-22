@@ -1,0 +1,30 @@
+El patrón Adapter es otro patrón de diseño muy útil que actúa como un puente entre dos interfaces incompatibles, permitiendo que trabajen juntas. Vamos a ver una explicación seguida de un ejemplo en PHP.
+
+Concepto del Patrón Adapter
+El Patrón Adapter se utiliza cuando necesitamos que dos clases con interfaces diferentes trabajen juntas. Es como un traductor que convierte la interfaz de una clase en otra interfaz que el cliente espera. Esto es especialmente útil cuando trabajamos con código legado o librerías externas que no podemos modificar.
+
+Beneficios del Adapter:
+
+Compatibilidad: Permite que clases incompatibles trabajen juntas sin cambiar sus implementaciones.
+Reutilización: Puedes usar código existente y adaptarlo para que funcione en un sistema nuevo.
+Desacoplamiento: Ayuda a desacoplar el código, ya que el cliente solo interactúa con la interfaz del adaptador y no con la clase concreta.
+Ejemplo en PHP
+Supongamos que estamos desarrollando una aplicación que maneja el envío de notificaciones. Actualmente, tenemos un sistema que utiliza una clase EmailSender para enviar correos electrónicos, pero ahora necesitamos integrar un sistema de mensajería de SMS que tiene una interfaz diferente.
+
+Vamos a usar el patrón Adapter para adaptar el sistema de SMS a la interfaz que espera el cliente para enviar notificaciones.
+
+Estructura del Código:
+Interfaz NotificationSender: Define el comportamiento que todos los servicios de notificaciones deben tener.
+Clase EmailSender: Implementa NotificationSender para enviar correos electrónicos.
+Clase SMSService: Tiene un método propio que no es compatible con NotificationSender.
+Clase SMSAdapter: Actúa como un adaptador para que SMSService pueda usarse como NotificationSender.
+
+Explicación
+NotificationSender define una interfaz estándar para el envío de notificaciones.
+EmailSender implementa directamente esta interfaz, por lo que puede usarse como se espera.
+SMSService tiene un método diferente, sendSMS, que no cumple con la interfaz estándar.
+SMSAdapter se encarga de adaptar SMSService para que cumpla con la interfaz NotificationSender. El cliente puede usar SMSAdapter como si fuera cualquier otro NotificationSender, y el adaptador traduce las llamadas para que funcionen con SMSService.
+Beneficios del Ejemplo
+El cliente no necesita preocuparse por las diferencias entre EmailSender y SMSService. Solo usa la interfaz estándar NotificationSender.
+Si más adelante se necesita agregar otros tipos de notificaciones (por ejemplo, WhatsApp o Slack), se pueden crear adaptadores similares sin cambiar el código principal.
+El patrón Adapter es muy útil para integrar sistemas existentes que tienen interfaces incompatibles o para crear un código que sea más flexible y fácil de extender.

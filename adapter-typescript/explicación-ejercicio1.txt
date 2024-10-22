@@ -1,0 +1,18 @@
+El patrón Adapter en TypeScript sigue el mismo principio: es un puente que conecta dos interfaces incompatibles para que puedan trabajar juntas. Es especialmente útil cuando necesitas integrar librerías o servicios externos que no puedes modificar directamente, pero deseas usarlos en tu sistema.
+
+Ejemplo Completo en TypeScript
+Interfaz NotificationSender: Define el comportamiento estándar para enviar notificaciones.
+Clase EmailSender: Implementa NotificationSender para enviar correos electrónicos.
+Clase SMSService: Tiene su propio método que no es compatible con NotificationSender.
+Clase SMSAdapter: Actúa como un adaptador para que SMSService cumpla con la interfaz NotificationSender.
+
+Explicación del Ejemplo en TypeScript
+NotificationSender: Define un contrato que todas las clases deben seguir para enviar notificaciones.
+EmailSender: Implementa directamente esta interfaz y puede ser usada sin problemas.
+SMSService: Tiene un método sendSMS que no cumple con la interfaz, por lo que no puede usarse directamente como NotificationSender.
+SMSAdapter: Implementa NotificationSender, pero internamente usa SMSService. Se encarga de adaptar la interfaz del sistema SMS para que pueda ser utilizada de forma estándar.
+Beneficios
+Compatibilidad: El cliente no necesita saber que SMSService usa un método diferente. Solo interactúa con el método send proporcionado por NotificationSender.
+Extensibilidad: Si deseas agregar nuevos servicios de notificaciones en el futuro (por ejemplo, WhatsApp), puedes crear nuevos adaptadores sin modificar el código existente.
+Tipificación: TypeScript asegura que las implementaciones sean correctas y ayuda a evitar errores al aprovechar el sistema de tipos.
+Este ejemplo muestra cómo el patrón Adapter facilita la integración de sistemas con interfaces incompatibles, asegurando que se pueda usar de manera consistente en tu aplicación.
