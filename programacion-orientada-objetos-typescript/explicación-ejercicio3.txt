@@ -1,0 +1,4 @@
+Explicación
+Interfaz Animal (Animal.ts): Define el método hacerSonido que todas las clases deben implementar.
+Clases Perro, Gato, y Vaca: Implementan la interfaz y definen cómo debe comportarse cada animal al hacer sonido.
+Archivo index.ts: Importa las clases y utiliza polimorfismo para llamar al método hacerSonido de cada clase sin preocuparse por qué tipo específico de animal es.

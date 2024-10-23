@@ -1,0 +1,22 @@
+Explicación del Código
+Interfaz Animal:
+
+Define el método hacerSonido(), que todas las clases que implementen la interfaz deben definir. Esto asegura que todas las clases tengan un comportamiento específico para hacerSonido().
+Clases Perro, Gato, y Vaca:
+
+Cada clase implementa la interfaz Animal y proporciona su propia versión del método hacerSonido().
+Esto permite que cada clase responda de manera distinta al mismo método, mostrando el comportamiento específico de cada animal.
+Función hacerSonarAnimal(Animal $animal):
+
+Recibe como argumento cualquier objeto que implemente la interfaz Animal.
+Utilizando el polimorfismo, se puede llamar al método hacerSonido() sin importar el tipo específico de objeto, y PHP llamará al método correcto según la clase del objeto que se le pase.
+
+Salida Esperada
+Guau, guau!
+Miau, miau!
+Muuu, muuu!
+
+¿Por Qué es Útil el Polimorfismo?
+El polimorfismo permite que el código sea más flexible y fácil de extender. Si, por ejemplo, se quisiera agregar un nuevo tipo de Animal, como Pajaro, solo se necesitaría crear una nueva clase que implemente la interfaz Animal y definir el método hacerSonido(). No habría necesidad de cambiar la función hacerSonarAnimal, ya que puede manejar cualquier objeto que implemente Animal.
+
+Este principio es fundamental para crear sistemas escalables y modulares, donde las partes del código se pueden extender y modificar sin afectar otras partes.

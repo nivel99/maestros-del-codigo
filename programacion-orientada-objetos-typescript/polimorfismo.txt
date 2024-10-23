@@ -1,0 +1,18 @@
+El polimorfismo es uno de los conceptos fundamentales de la programación orientada a objetos (POO). Proviene del griego y significa "muchas formas". En el contexto de POO, se refiere a la capacidad de un objeto para tomar diferentes formas y comportarse de manera distinta dependiendo del contexto en el que se utilice. Esto se logra a través de clases que implementan la misma interfaz o que heredan de una clase base común, pero que redefinen o sobrecargan los métodos para adaptarse a su propio comportamiento.
+
+¿Por qué es útil el polimorfismo?
+Flexibilidad: Permite que diferentes clases se utilicen de manera intercambiable sin necesidad de conocer detalles específicos de cada clase. Esto facilita el desarrollo y la expansión de programas.
+Extensibilidad: Se puede agregar nuevas clases que implementen la misma interfaz sin tener que modificar el código existente.
+Mantenibilidad: Reduce la cantidad de código duplicado, ya que el comportamiento general se puede definir en una interfaz o clase base, y cada clase concreta solo necesita implementar las diferencias específicas.
+Ejemplo para Entender el Concepto
+Supongamos que tenemos una interfaz llamada Animal que tiene un método hacerSonido. Luego, tenemos varias clases (Perro, Gato, Vaca) que implementan esta interfaz. Cada una de estas clases tendrá su propia implementación de hacerSonido, aunque se llamen de la misma forma.
+
+Gracias al polimorfismo, podemos crear una función que reciba cualquier objeto que sea de tipo Animal, y aunque no sepamos si es un Perro, un Gato o una Vaca, podemos llamar al método hacerSonido y se ejecutará el comportamiento específico de cada uno:
+
+Si es un Perro, hará "Guau, guau!"
+Si es un Gato, hará "Miau, miau!"
+Si es una Vaca, hará "Muuu, muuu!"
+Beneficio en la Práctica
+Esto significa que puedes escribir código genérico y reutilizable que funcione con diferentes tipos de objetos, sin necesidad de modificarlo cada vez que agregues una nueva clase que implemente la misma interfaz. En el ejemplo de programación de antes, si más adelante creas una clase Pájaro que implemente la interfaz Animal, el resto del código seguirá funcionando sin ningún cambio. Solo tendrás que definir cómo hace sonido el Pájaro.
+
+En resumen, el polimorfismo permite que múltiples tipos de objetos sean tratados de la misma manera, lo que facilita la escalabilidad, la extensión y el mantenimiento de tu código.

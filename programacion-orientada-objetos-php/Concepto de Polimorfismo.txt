@@ -1,0 +1,3 @@
+El polimorfismo es un principio clave en la programación orientada a objetos que permite usar una misma interfaz para diferentes tipos de objetos. Esto significa que puedes llamar al mismo método en distintos objetos y obtener comportamientos específicos según la clase a la que pertenezcan.
+
+En PHP, el polimorfismo se logra a través de interfaces o clases abstractas, donde las clases derivadas implementan o sobrescriben métodos definidos en la interfaz o clase abstracta, y esos métodos pueden tener diferentes comportamientos.
