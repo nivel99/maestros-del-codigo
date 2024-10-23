@@ -1,0 +1,28 @@
+Explicación del Código
+Clase Base Personaje:
+
+Define propiedades y métodos comunes como nombre, salud, mostrarInfo(), y recibirDanio().
+Las propiedades están protegidas (protected), lo que permite que las clases hijas accedan a ellas.
+Clases Derivadas Guerrero y Mago:
+
+Guerrero hereda de Personaje e introduce una propiedad fuerza y un método atacar().
+Mago también hereda de Personaje pero agrega la propiedad mana y el método lanzarHechizo().
+Uso de super():
+
+Las clases hijas llaman al constructor de la clase base para inicializar las propiedades heredadas usando super().
+Ejemplos de Objetos:
+
+Los objetos guerrero y mago muestran cómo se pueden usar los métodos y propiedades heredados, así como los métodos específicos de cada clase.
+
+Salida Esperada
+
+Nombre: Arthas
+Salud: 100
+Arthas ataca con una fuerza de 30.
+Arthas ha recibido 20 de daño.
+
+Nombre: Gandalf
+Salud: 80
+Gandalf lanza un hechizo.
+Gandalf lanza un hechizo.
+Gandalf ha recibido 30 de daño.

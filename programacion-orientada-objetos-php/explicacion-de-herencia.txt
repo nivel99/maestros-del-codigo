@@ -1,0 +1,4 @@
+Aquí tienes un ejemplo de herencia en PHP usando una clase Personaje. En este ejemplo, la clase Personaje será la clase base y tendrá propiedades y métodos comunes para todos los personajes. Luego, se crearán clases derivadas (hijas) como Guerrero y Mago que heredan de Personaje y agregan su propio comportamiento y propiedades adicionales.
+
+Concepto de Herencia
+La herencia permite crear una nueva clase que reutiliza, extiende o modifica el comportamiento de otra clase. La clase nueva (hija) hereda propiedades y métodos de la clase existente (padre). Esto promueve la reutilización de código y la extensibilidad.
