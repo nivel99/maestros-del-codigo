@@ -1,0 +1,6 @@
+Conceptos Clave de POO en TypeScript
+Clase: Plantilla para crear objetos con propiedades y métodos.
+Objeto: Instancia de una clase.
+Propiedades: Variables definidas dentro de la clase.
+Métodos: Funciones que describen el comportamiento de la clase.
+Encapsulamiento: Control de acceso a las propiedades y métodos de la clase, usando modificadores como private, protected, y public.

@@ -1,0 +1,8 @@
+Explicación del Código
+Propiedades:
+Las propiedades make, model, y year están marcadas como private, lo que significa que no pueden ser accedidas directamente fuera de la clase. Solo se puede acceder a ellas a través de los métodos que se proporcionan (getters y setters).
+Constructor:
+El constructor de la clase Car inicializa las propiedades de un objeto cuando se crea.
+Métodos:
+Getters y Setters: Métodos para acceder y modificar las propiedades privadas.
+Método displayInfo: Muestra la información del coche en la consola.

@@ -1,0 +1,38 @@
+Explicación del Código
+Propiedades:
+La clase Car tiene tres propiedades privadas ($make, $model, $year). Al ser privadas, solo pueden ser accedidas y modificadas dentro de la propia clase.
+Constructor:
+El constructor (__construct) permite inicializar los valores de make, model, y year cuando se crea un nuevo objeto de la clase Car.
+Métodos:
+Getters y Setters: Métodos como getMake, setMake, getModel, y setModel se utilizan para acceder y modificar las propiedades privadas de la clase. Esta es una forma de encapsulamiento, que protege las propiedades del objeto y controla cómo se accede a ellas.
+Método displayInfo: Muestra la información del coche en un formato legible.
+
+<?php
+require_once 'Car.php';
+
+// Crear un objeto de la clase Car
+$myCar = new Car("Toyota", "Corolla", 2022);
+
+// Usar los métodos de la clase
+echo $myCar->getMake(); // Salida: Toyota
+echo "\n";
+
+$myCar->setModel("Camry");
+echo $myCar->getModel(); // Salida: Camry
+echo "\n";
+
+$myCar->displayInfo(); // Salida: Car: Toyota Camry (2022)
+?>
+
+Explicación del Uso del Objeto
+Creación del Objeto:
+Usamos new Car("Toyota", "Corolla", 2022); para crear un objeto llamado $myCar y pasamos los valores de las propiedades al constructor.
+Uso de Métodos:
+Llamamos a getMake() para obtener la marca del coche.
+Llamamos a setModel("Camry") para cambiar el modelo del coche.
+Finalmente, displayInfo() muestra la información completa del coche.
+Conceptos POO Demostrados
+Encapsulamiento: Las propiedades privadas ($make, $model, $year) solo pueden ser modificadas a través de los métodos de la clase.
+Abstracción: La clase Car representa el concepto general de un coche, ocultando los detalles internos y exponiendo solo lo que se necesita a través de métodos públicos.
+Creación de Objetos: La instancia $myCar es un objeto de la clase Car, que tiene su propio estado y comportamiento.
+Métodos: Las funciones dentro de la clase definen cómo interactuar con los datos y comportamientos del objeto.

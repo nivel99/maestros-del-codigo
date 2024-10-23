@@ -1,0 +1,6 @@
+Conceptos Clave de POO en PHP
+Clase: Una plantilla para crear objetos. Define las propiedades y métodos que los objetos de la clase tendrán.
+Objeto: Una instancia de una clase. Es un elemento que se crea a partir de la clase y puede tener su propio estado.
+Propiedades: Las variables que pertenecen a una clase (también llamadas atributos o campos).
+Métodos: Las funciones que pertenecen a una clase y definen el comportamiento de los objetos.
+
